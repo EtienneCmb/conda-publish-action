@@ -15,13 +15,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.1.0
     - name: publish-to-conda
       uses: fcakyon/conda-publish-action@v1.3
       with:
         subdir: 'conda'
-        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
-        platforms: 'win osx linux'
+        AnacondaToken: ${{ secrets.ANACONDA_TOKEN }}
 ```
 
 ### Example project structure
@@ -50,6 +49,3 @@ jobs:
 
 ### Supported anaconda channels
 - conda-forge
-- pytorch
-- fcakyon
-- districtdatalabs
